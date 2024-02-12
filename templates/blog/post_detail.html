@@ -1,0 +1,64 @@
+<br><br><br><br><br>
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{blog.title}}</title>
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+    
+</head>
+<body>
+    <section class="bg">
+       <div>
+            <div>
+                <h1>Welcome To Bansloi Blog ~ how to success your bussiness.</h1>
+            </div>
+           <article class="blog-article clear">
+          
+                <div class="blog-details">                   
+                    <h3>{{blog.title}}</h3>
+                    <div class="admin">
+                        <div class="ab"><a style="color: burlywood;" href="">{{blog.author}}</a></div>
+                        <div class="cd"><span> | {{blog.published}} </span></div>
+                        <div class="ef"><span> | Uncategorized</span></div>
+                        <div class="gh"><span> | No Comments</span></div>
+                    </div>
+                    <picture>
+                        <a  href="https://bansloi.com/images">
+                      
+                         <img  src="{{blog.image.url}}" alt="img" >
+                        </a>
+                        <style>
+                            img{
+                                width: 100%;
+                                border-radius: 25px;
+
+                            }
+                        </style>
+                    </picture>
+
+                    <p>{{blog.content|safe}}</p>                 
+                </div>
+                <p style="color: white; margin-top: 3%;">No comments.</p>
+
+                
+                
+           
+           </article>
+
+        </div>
+       
+   </section>
+    
+</body>
+</html>
+
+
+{% endblock content %}

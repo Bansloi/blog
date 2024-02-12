@@ -1,0 +1,78 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Success | Bansloi Product and Technology ...</title>
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+</head>
+<body>
+ 
+     <section class="bg">
+       <div>    
+           <article class="blog-article clearfix">
+            {% for post in post %}
+                <div class="blog-data">                   
+                    <h3>{{post.title}}</h3>
+                    <div class="admin">
+                        <div class="ab"><a style="color: burlywood;" href="">{{post.author}}</a></div>
+                        <div class="cd"><span> | {{post.published|timesince}} ago</span></div>
+                        <div class="ef"><span> | Uncategorized</span></div>                     
+                        <div class="gh"><span> | No Comments</span></div>
+                    </div>
+                    <picture>
+                        <a href="{% url 'post_detail' post.slug %}">
+                      
+                         <img class="img-responsive" src="{{post.image.url}}" alt="img" >
+                        </a>
+                        <style>
+                            img{
+                                width: 100%;
+                                border-radius: 25px;
+                                box-shadow: 2px 4px 8px hwb(101 0% 55%);
+                            }
+                        </style>
+                    </picture>
+                    <p class="para">{{post.content|safe|truncatechars:200}}</p>
+                    <span><a class="read" title="continue readaing" href="{% url 'post_detail' post.slug %}">Continue reading <l class="font">&#8594;</l></a></span>
+                    <br>
+                    <br>
+                </div>
+            {% endfor %}
+           </article>
+
+        </div>
+       
+   </section>
+   <div class="pagination">
+        <span class="step-links">
+            {% if post.has_previous %}
+                <a style="color: whitesmoke;" href="{% url 'post_list' %}">&laquo; First</a>
+                <a style="color: lawngreen;" href="?page={{ post.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ post.number }} of {{ post.paginator.num_pages }}.
+            </span>
+
+            {% if post.has_next %}
+                <a style="color: whitesmoke;" href="?page={{ post.next_page_number }}">Next</a>
+                <a style="color: whitesmoke;" href="?page={{ post.paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+        </span>
+   </div>
+
+
+    
+</body>
+</html>
+
+
+    
+{% endblock content %}

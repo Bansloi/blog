@@ -1,0 +1,110 @@
+{% load static %}
+<code>
+    <div class="donate-page">
+        <span class="donate-title">Bitcoin Address Donate Now:</span><br>
+        <a class="donate-link" title="Donate Now" href="bitcoin:bc1q7t768xacuh85ka3cdek48t5kza3fffw7jycmff" target="_blank">bc1q7t768xacuh85ka3cdek48t5kza3fffw7jycmff</a>
+    </div>
+    <br>
+    <!-- donate payment getway -->
+    <div class="donate-page">
+        <button title="Donate Now" class="donate-link" id="upiButton">Make UPI Payment</button>
+
+    <script>
+        document.getElementById('upiButton').addEventListener('click', function() {
+            window.location.href = 'upi://pay?pa=9572990020@okbizaxis&pn=Receiver%20Name&mc=1234&tid=123456';
+        });
+    </script>
+    </div>
+
+  
+   
+    <!-- Start of whatsapp chat button code -->
+<style>
+ 
+  .donate-title {
+  font-size: 100%;
+  color: #e67a00;
+  text-align: left;
+  line-height: 52px;
+  font-weight: 600;
+  margin-left: 3%;
+}
+.donate-page >button{
+   /* padding-left: 5px;
+   padding-right: 5px;
+   background-color: #fced22;
+   box-shadow: 2px 2px 4px black;
+   border-radius: 25px;
+   overflow: hidden;
+   border: 1px  dashed red; */
+   background-color: #1cc9c9;
+        -webkit-border-radius: 60px;
+        border-radius: 60px;
+        border: none;
+        color: #eeeeee;
+        cursor: pointer;
+        display: inline-block;
+        font-family: sans-serif;
+        font-size: 15px;
+        padding: 5px 15px;
+        text-align: center;
+        text-decoration: none;
+  
+}
+.donate-link{
+    border-radius: 5px;
+    padding: 3px;
+    font-weight: 300;
+    color: #0509eb;
+    margin-left: 3%;
+    text-shadow: 2px 2px 4px white;
+}
+.donate-link:hover{
+    color: green;
+}
+@keyframes glowing {
+        0% {
+          background-color: #2ba805;
+          box-shadow: 0 0 5px #2ba805;
+        }
+        50% {
+          background-color: #49e819;
+          box-shadow: 0 0 20px #49e819;
+        }
+        100% {
+          background-color: #2ba805;
+          box-shadow: 0 0 5px #2ba805;
+        }
+      }
+.donate-link{
+    animation: glowing 1300ms infinite;
+}
+
+/* donate ended */
+    .wa-btn-float{
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        left: 10px;
+        /* right: 40px; */
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+    }
+    .wa-btn-icon{
+        margin-top: 16px;
+    }
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a title="Whatsapp Message Now &rAarr;" href="https://api.whatsapp.com/send?phone=+919572990020&text=Hello there! I need some help" class="wa-btn-float" target="_blank"><i class="fa fa-whatsapp wa-btn-icon"></i></a>
+
+<!-- End of whatsapp chat button -->
+<script src="//code.tidio.co/kfbkia8ge2vrdumjj1niakmgbd5e1jrx.js" async></script>
+
+
+</code>
